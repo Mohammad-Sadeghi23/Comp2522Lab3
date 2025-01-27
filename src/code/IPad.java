@@ -1,14 +1,11 @@
-public class IPad extends IDevice
-{
+public class IPad extends IDevice {
 
-    public IPad(final String purpose)
-    {
+    public IPad(final String purpose) {
         super(purpose);
     }
 
     @Override
-    public String getPurpose()
-    {
+    public String getPurpose() {
         final StringBuilder devicePurpose;
         devicePurpose = new StringBuilder();
 
@@ -20,8 +17,7 @@ public class IPad extends IDevice
     }
 
     @Override
-    public void printDetails()
-    {
+    public void printDetails() {
 
     }
 }
