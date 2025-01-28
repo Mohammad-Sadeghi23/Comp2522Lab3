@@ -1,8 +1,26 @@
 package ca.bcit.comp2522.lab3;
+
+/**
+ * Constructs an IPad device (child class of IDevice), with instance variables to indicate if it
+ * has a case and its operating system version.
+ *
+ * @author Mohammad, Ted
+ * @version 1.0
+ */
 public class IPad extends IDevice {
 
-    public IPad(final String purpose) {
-        super(purpose);
+    final boolean hasACase;
+    final String operatingSystemVersion;
+
+
+    public IPad(final boolean hasACase,
+                final String operatorSystemVersion) {
+
+
+        super("learning");
+
+        this.hasACase = hasACase;
+        this.operatingSystemVersion = operatorSystemVersion;
     }
 
     @Override
@@ -19,6 +37,6 @@ public class IPad extends IDevice {
 
     @Override
     public void printDetails() {
-
+        System.out.println(this.toString());
     }
 }
