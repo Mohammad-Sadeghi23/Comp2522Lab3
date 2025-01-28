@@ -1,3 +1,4 @@
+package ca.bcit.comp2522.lab3;
 /**
  * A class for Apple product.
  * 

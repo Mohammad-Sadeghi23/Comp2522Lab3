@@ -1,6 +1,10 @@
-public class IPad extends IDevice {
+package ca.bcit.comp2522.lab3;
+public class IPod extends IDevice {
+    private static final double MAXVOLUMEDB = 0;
 
-    public IPad(final String purpose) {
+    private final int numOfSongsStored = 0;
+
+    public IPod(final String purpose) {
         super(purpose);
     }
 
@@ -11,7 +15,7 @@ public class IPad extends IDevice {
 
         devicePurpose.append(super.getPurpose());
         devicePurpose.append("is ");
-        devicePurpose.append("\"learning\"");
+        devicePurpose.append("\"music\"");
 
         return devicePurpose.toString();
     }
