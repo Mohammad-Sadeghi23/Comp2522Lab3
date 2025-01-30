@@ -1,5 +1,6 @@
 package ca.bcit.comp2522.lab3;
-/**
+
+ /**
  * Class of IPhone, includes instance variables for minutes
  * remaining on phone plan, and carrier name.
  *

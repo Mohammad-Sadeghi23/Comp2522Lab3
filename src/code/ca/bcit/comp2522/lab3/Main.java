@@ -19,14 +19,18 @@ public class Main
         final IPod ipod2;
         final IPod ipod3;
         
-        // 300 songs, max volume 80.0 dB
+        // IPod with 300 songs, max volume 80.0 dB
         ipod1 = new IPod(300, 80.0); 
-        // 400 songs, max volume 85.0 dB
+        // IPod with 400 songs, max volume 85.0 dB
         ipod2 = new IPod(400, 85.0); 
-        // 300 songs, max volume 70.0 dB
+        // IPod with 300 songs, max volume 70.0 dB
         ipod3 = new IPod(300, 70.0); 
         
-        // Print out test result for IPod.
+        /**
+         * Print out test result for IPod.
+         * If the overrided equal method work 
+         * correctly, CORRECT statement is printed. 
+         * */ 
         System.out.println("IPod Equality Test:");
         if (!ipod1.equals(ipod2))
         {
@@ -53,14 +57,18 @@ public class Main
         final IPad ipad2;
         final IPad ipad3;
         
-        // Has case, OS version iPadOS 15
+        // IPad that has case, OS version iPadOS 15
         ipad1 = new IPad(true, "iPadOS 15"); 
-        // No case, OS version iPadOS 14
+        // IPad that has no case, OS version iPadOS 14
         ipad2 = new IPad(false, "iPadOS 14"); 
-        // Has case, OS version iPadOS 15
+        // IPad that has case, OS version iPadOS 15
         ipad3 = new IPad(true, "iPadOS 15"); 
         
-        // Test equality and inequality for IPad.
+        /**
+         * Print out test result for IPad.
+         * If the overrided equal method work 
+         * correctly, CORRECT statement is printed. 
+         * */ 
         System.out.println("IPad Equality Test:");
         if (!ipad1.equals(ipad2))
         {
@@ -86,14 +94,24 @@ public class Main
         final IPhone iphone2;
         final IPhone iphone3;
         
-        // 120 minutes, carrier Verizon
+        /** IPhone with 120 minutes remaining and 
+         * carrier is Verizon.*/
         iphone1 = new IPhone(120.0, "Verizon"); 
-        // 180 minutes, carrier T-Mobile
+        /** IPhone with 180 minutes remaining and 
+         * carrier is T-Mobile
+         * */
         iphone2 = new IPhone(180.0, "T-Mobile");
-        // 120 minutes, carrier AT&T
+        /** IPhone with 120 minutes remaining and 
+         * carrier is AT&T
+         * */
         iphone3 = new IPhone(120.0, "AT&T"); 
         
-        // Test equality and inequality for IPhone.
+        
+        /**
+         * Print out test result for IPhone.
+         * If the overrided equal method work 
+         * correctly, CORRECT statement is printed. 
+         * */ 
         System.out.println("IPhone Equality Test:");
         if (!iphone1.equals(iphone2))
         {
@@ -119,14 +137,18 @@ public class Main
         final IPhone16 iphone16_2;
         final IPhone16 iphone16_3;
        
-        // 100 minutes, high-res camera, 512 GB
+        // IPhone16 with 100 minutes remaining, high-res camera, 512 GB
         iphone16_1 = new IPhone16(100.0, "Verizon", true, 512); 
-        // 100 minutes, high-res camera, 256 GB
+        // IPhone16 with 100 minutes, high-res camera, 256 GB
         iphone16_2 = new IPhone16(100.0, "Verizon", true, 256); 
-        // 100 minutes, no high-res camera, 512 GB
+        // IPhone16 with 100 minutes, no high-res camera, 512 GB
         iphone16_3 = new IPhone16(100.0, "Verizon", false, 512); 
         
-        // Test equality and inequality for IPhone16.
+        /**
+         * Print out test result for IPhone16.
+         * If the overrided equal method work 
+         * correctly, CORRECT statement is printed. 
+         * */ 
         System.out.println("IPhone16 Equality Test:");
         if (iphone16_1.equals(iphone16_2))
         {
