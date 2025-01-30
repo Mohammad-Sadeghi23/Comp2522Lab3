@@ -1,15 +1,16 @@
 package ca.bcit.comp2522.lab3;
 /**
- * A class for Apple product.
+ * A class for Apple products.
+ * Includes an instance variable to store the purpose of the device.
  * 
- * @Author Mohammad, Ted
+ * @Author Mohammad Sadeghi
+ * @author Ted Ip
  * @version 1.0
  */
 
-abstract class IDevice {
-    /**
-     * Purpose of device.
-     */
+abstract class IDevice
+{
+
     private final String purpose;
 
     /**
@@ -17,27 +18,59 @@ abstract class IDevice {
      * 
      * @param purpose of IDevice
      */
-    public IDevice(final String purpose) {
-        this.purpose = purpose;
+    public IDevice(final String purpose)
+    {
 
+        validateIDevicePurpose(purpose);
+        this.purpose = purpose;
+    }
+
+    /*
+     * Validates the given purpose based on the following criteria:
+     * 1. Cannot be null
+     * 2. Cannot be blank
+     */
+    private static void validateIDevicePurpose(final String purpose)
+    {
+
+        if(purpose == null ||
+           purpose.isBlank())
+
+        {
+            throw new IllegalArgumentException("Purpose can't be null or empty");
+        }
     }
 
     /**
-     * To print purpose of IDevice.
+     * To return the purpose of the IDevice.
      * 
-     * @return String purpose
+     * @return String purpose, purpose of the IDevice.
      */
-    public String getPurpose() {
-        final StringBuilder devicePurpose;
-        devicePurpose = new StringBuilder(purpose);
-
-        devicePurpose.append("The purpose of this iDevice is ");
-
+    public String getPurpose()
+    {
         return purpose;
     }
 
     /**
-     * To print all child class's instance variables.
+     * Prints details.
      */
     public abstract void printDetails();
+
+    /**
+     * Returns the purpose of the device.
+     *
+     * @return purpose of the device is as a string
+     */
+    @Override
+    public String toString()
+    {
+
+        final StringBuilder IDeviceDetails;
+        IDeviceDetails = new StringBuilder();
+
+        IDeviceDetails.append("The purpose of this device is ");
+        IDeviceDetails.append(purpose);
+
+        return IDeviceDetails.toString();
+    }
 }
