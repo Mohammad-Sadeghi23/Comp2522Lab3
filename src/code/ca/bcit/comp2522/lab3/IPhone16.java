@@ -1,5 +1,11 @@
 package ca.bcit.comp2522.lab3;
 
+/**
+ * Class of IPhone16.
+ * @author Mohammad, Ted
+ * @version 1.0
+ * */
+
 public class IPhone16 extends IPhone{
     private boolean highResolutionCamera;
     private int gigabytesOfMemory;
