@@ -1,7 +1,8 @@
 package ca.bcit.comp2522.lab3;
 /**
- * A class for Apple products.
- * Includes an instance variable to store the purpose of the device.
+ * An abstract class for Apple products.
+ * Includes an instance variable to store the purpose of the device,
+ * and an abstract method for to print details of the device.
  * 
  * @Author Mohammad Sadeghi
  * @author Ted Ip

@@ -21,7 +21,7 @@ public class IPod extends IDevice
 
     /**
      * Constructs an IPod device with instance variables for
-     * an maximum volume in decibels and number of songs currently stored on the IPod.
+     * a maximum volume in decibels and number of songs currently stored on the IPod.
      *
      * @param numOfSongsStored number of songs stored on the IPod
      * @param maxVolumeDB the maximum volume in decibels
@@ -32,17 +32,20 @@ public class IPod extends IDevice
 
         super("music");
 
+        validateMaxVolumeDB(maxVolumeDB);
+        validateNumOfSongsStored(numOfSongsStored);
+
         this.maxVolumeDB = maxVolumeDB;
         this.numOfSongsStored = numOfSongsStored;
     }
 
     /*
      * Validates the given maximum volume based on the following criteria:
-     * 1. Cannot be equal to or less than MIN_VOLUME_DB.
+     * 1. Cannot be less than MIN_VOLUME_DB.
      */
-    private void validateMaxVolumeDB(final double maxVolumeDB)
+    private static void validateMaxVolumeDB(final double maxVolumeDB)
     {
-        if (maxVolumeDB <= MIN_VOLUME_DB)
+        if (maxVolumeDB < MIN_VOLUME_DB)
         {
             throw new IllegalArgumentException("Max volume must be greater than " + MIN_VOLUME_DB);
         }
@@ -52,7 +55,7 @@ public class IPod extends IDevice
      * Validates the given number of songs stored based on the following criteria:
      * 1. Cannot be less than MIN_SONGS_STORED.
      */
-    private void validateNumOfSongsStored(final int numOfSongsStored)
+    private static void validateNumOfSongsStored(final int numOfSongsStored)
     {
         if (numOfSongsStored < MIN_SONGS_STORED) {
             throw new IllegalArgumentException("Number of songs stored cannot be negative");
@@ -61,6 +64,7 @@ public class IPod extends IDevice
 
     /**
      * Getter for max volume.
+     *
      * @return maxVolumeDB
      */
     public double getMaxVolumeDB()
@@ -70,6 +74,7 @@ public class IPod extends IDevice
 
     /**
      * Getter for number of songs stored.
+     *
      * @return numOfSongsStored
      */
     public int getNumOfSongsStored()
@@ -80,6 +85,7 @@ public class IPod extends IDevice
     /**
      * Setter for maximum volume.
      * Ran through validator first.
+     *
      * @param maxVolumeDB the given maximum volume in decibels
      */
     public void setMaxVolumeDB(final double maxVolumeDB)
@@ -91,6 +97,7 @@ public class IPod extends IDevice
     /**
      * Setter for number of songs stored.
      * Ran through validator first.
+     *
      * @param numOfSongsStored the given number of songs stored
      */
     public void setNumOfSongsStored(final int numOfSongsStored)

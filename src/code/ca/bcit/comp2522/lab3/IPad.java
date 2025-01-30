@@ -13,26 +13,27 @@ import java.util.Objects;
 public class IPad extends IDevice
 {
 
-    private final boolean hasACase;
-    private final String operatingSystemVersion;
+    private boolean cased;
+    private String operatingSystemVersion;
 
 
     /**
      * Constructs an IPad device with instance variables for
      * an operating system version and if the IPad has a case.
      *
-     * @param hasACase if the Ipad has a case
+     * @param cased if the Ipad has a case
      * @param operatorSystemVersion the Ipads current OS version
      */
-    public IPad(final boolean hasACase,
-                final String operatorSystemVersion) {
+    public IPad(final boolean cased,
+                final String operatorSystemVersion)
+    {
 
 
         super("learning");
 
         validateOperatingSystemVersion(operatorSystemVersion);
 
-        this.hasACase = hasACase;
+        this.cased = cased;
         this.operatingSystemVersion = operatorSystemVersion;
     }
 
@@ -41,7 +42,7 @@ public class IPad extends IDevice
      * 1. Cannot be null
      * 2. Cannot be blank
      */
-    private void validateOperatingSystemVersion(final String operatingSystemVersion)
+    private static void validateOperatingSystemVersion(final String operatingSystemVersion)
     {
         if (operatingSystemVersion == null || operatingSystemVersion.isEmpty())
         {
@@ -54,9 +55,9 @@ public class IPad extends IDevice
      *
      * @return if Ipad has a case
      */
-    public boolean isHasACase()
+    public boolean isCased()
     {
-        return hasACase;
+        return cased;
     }
 
     /**
@@ -67,6 +68,28 @@ public class IPad extends IDevice
     public String getOperatingSystemVersion()
     {
         return operatingSystemVersion;
+    }
+
+    /**
+     * Setter for IPad case status
+     *
+     * @param cased the given status for the IPad having a case
+     */
+    public void setCased(final boolean cased)
+    {
+        this.cased = cased;
+    }
+
+    /**
+     * Setter for operating system version.
+     * Ran through validator first.
+     *
+     * @param operatingSystemVersion the given operating system version
+     */
+    public void setOperatingSystemVersion(final String operatingSystemVersion)
+    {
+        validateOperatingSystemVersion(operatingSystemVersion);
+        this.operatingSystemVersion = operatingSystemVersion;
     }
 
     /**
@@ -84,7 +107,7 @@ public class IPad extends IDevice
         IPadStringBuilder.append(this.getPurpose());
         IPadStringBuilder.append(", ");
 
-        if(this.hasACase)
+        if(this.cased)
         {
             IPadStringBuilder.append("has a Case, ");
         }
@@ -107,10 +130,9 @@ public class IPad extends IDevice
         str.append("The operating system version of this IPad is: ");
         str.append(this.operatingSystemVersion);
         str.append("Does this IPad have a case: ");
-        str.append(this.hasACase);
+        str.append(this.cased);
 
         System.out.println(str);
-
     }
 
     /**
@@ -121,7 +143,8 @@ public class IPad extends IDevice
      * @return if given object is equal to this Ipad
      */
     @Override
-    public boolean equals(final Object other) {
+    public boolean equals(final Object other)
+    {
 
         if(other == null)
         {
